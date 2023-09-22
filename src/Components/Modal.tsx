@@ -1,7 +1,8 @@
+let isScroll = true
+
 export default function Modal({ children, showModal} : { children: React.ReactNode, showModal: Boolean }){
     if(showModal){
-        window.scrollTo(0,0);
-        document.body.style.overflow = "hidden";
+        disableScroll()
         return (
             <div className="modal">
                 <div className="modalMain">
@@ -11,7 +12,7 @@ export default function Modal({ children, showModal} : { children: React.ReactNo
             </div> 
         )
     } else {
-        document.body.style.overflow = "scroll"
+        enableScroll()
         return <></>
     }
 }
@@ -31,3 +32,17 @@ export function ModalBody({ children }: {children: React.ReactNode}){
         </div>
     )
 }
+
+function enableScroll(){
+    if(isScroll)
+        document.body.style.overflow = "scroll"
+}
+
+ function disableScroll(){
+    window.scrollTo(0,0);
+    document.body.style.overflow = "hidden";
+    isScroll = false
+    setTimeout(() =>{
+        isScroll = true
+    }, 0)
+ }

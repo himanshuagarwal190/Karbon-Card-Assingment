@@ -81,8 +81,8 @@ export default function ViewUser( { users, setUsers }: { users: Array<User>, set
             </div>
             
 
-            <UserModal title="View User" showModal={showViewUser} setShowModal={setShowViewUser} user={userData.current} isEditable={true} />
-            <UserModal title="Edit User" showModal={showEditUser} setShowModal={setShowEditUser} user={userData.current} onSubmit={editUser} isEditable={false} />
+            <UserModal title="View User" showModal={showViewUser} setShowModal={setShowViewUser} user={userData.current} isEditable={false} />
+            <UserModal title="Edit User" showModal={showEditUser} setShowModal={setShowEditUser} user={userData.current} onSubmit={editUser} isEditable={true} />
         </div>
         
     )

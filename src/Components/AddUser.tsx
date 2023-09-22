@@ -31,7 +31,7 @@ export default function AddUser( { users, setUsers }: { users: Array<User>, setU
         <div className="addUser">
             <h3>List Of Users</h3>
             <button onClick={() => setShowModal(true)} className="blueButton">Add Users</button>
-            <UserModal title="Add User" setShowModal={setShowModal} showModal={showModal} onSubmit={addUser} isEditable={false}/>
+            <UserModal title="Add User" setShowModal={setShowModal} showModal={showModal} onSubmit={addUser} isEditable={true}/>
         </div>
     )
 }

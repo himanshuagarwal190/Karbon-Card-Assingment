@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { User } from "../Interface";
 import Modal, { ModalBody, ModalHead } from "./Modal";
 
-export default function UserModal({ showModal, setShowModal, onSubmit, user, title, isEditable }: { showModal: Boolean, onSubmit?: Function, setShowModal: Function, user?:User | null, title: string, isEditable: Boolean }){
+function UserModal({ showModal, setShowModal, onSubmit, user, title, isEditable }: { showModal: Boolean, onSubmit?: Function, setShowModal: Function, user?:User | null, title: string, isEditable: Boolean }){
     return (
         <Modal showModal={showModal}>
                 <ModalHead>
@@ -58,3 +59,5 @@ export default function UserModal({ showModal, setShowModal, onSubmit, user, tit
             </Modal>
     )
 }
+
+export default memo(UserModal)
