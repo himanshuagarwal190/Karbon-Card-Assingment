@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/Header';
+import AddUser from './Components/AddUser';
+import ViewUser from './Components/UserCards';
+import { useEffect, useState } from 'react';
+import { User } from './Interface';
+import { getStore } from './Helpers';
 
 function App() {
+  const [users, setUsers] = useState<Array<User>>([])
+
+  useEffect(() => {
+    const allUsers: Array<User> = getStore()
+    setUsers(allUsers)
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main className='container'>
+        <AddUser users={users}  setUsers={setUsers} />
+        <ViewUser users={users} setUsers={setUsers} />
+      </main>
     </div>
   );
 }

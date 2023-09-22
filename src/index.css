@@ -7,7 +7,206 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#App {
+  position: relative;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container{
+  padding: 0 150px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1E1E1E;
+  color: white;
+}
+
+.headerTitle { 
+  font-size: 20px;
+}
+
+.profileImage {
+  width: 50px;
+  height: 50px;
+  filter: invert(100%);
+}
+
+.addUser {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blueButton, .redButton {
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.blueButton {
+  background-color: #1677FF;
+}
+
+.redButton {
+  background-color: red;
+}
+
+.XButton{
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 30px;
+}
+
+.modal {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0, 9%, 2%, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modalHead{
+  background-color: white;
+  border-bottom: 1px solid rgb(198, 194, 194);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+.modalMain{
+  width: 40%;
+}
+
+
+.flex-end {
+  display: flex;
+  justify-content: center;
+}
+
+.formBody {
+  display: flex;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  padding: 0 20px;
+  background-color: white;
+}
+
+.formItem {
+  width: 50%;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 10px;
+  position: relative;
+  left: 25px
+}
+
+.formSubmit {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.formSubmit .blueButton {
+  margin-right: 40px;
+}
+
+#Female{
+  margin-left: 10px;
+}
+
+.viewUser {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 22px;
+  row-gap: 20px;
+  padding: 30px 0;
+}
+
+.viewUserItem {
+  width: 30%;
+}
+.viewHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid black;
+  padding: 0 14px;
+}
+.viewBody{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 1px solid black;
+  padding: 0 14px;
+}
+.viewFooter{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  padding: 14px 0;
+}
+.circle{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.pagination{
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px)  {
+  .modalMain{
+    width: 100%;
+  }
+
+  .formItem{
+    width: 100%;
+  }
+
+  .viewUserItem{
+    width: 40%;
+  }
+
+  .container{
+    padding: 0 40px;
+  }
+}
+
+
+
+@media screen and (max-width: 1000px)  {
+  .modalMain{
+    width: 50%;
+  }
+
+  .viewUserItem{
+    width: 100%;
+  }
 }
