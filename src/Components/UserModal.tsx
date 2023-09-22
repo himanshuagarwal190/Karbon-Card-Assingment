@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { User } from "../Interface";
 import Modal, { ModalBody, ModalHead } from "./Modal";
 
@@ -60,4 +59,4 @@ function UserModal({ showModal, setShowModal, onSubmit, user, title, isEditable 
     )
 }
 
-export default memo(UserModal)
+export default UserModal
